@@ -16,9 +16,14 @@
     <div class="menu-inner-shadow"></div>
 
     <ul class="menu-inner py-1">
+        <?php
+
+        use Faker\Provider\Base;
+
+        $uri = service('uri'); ?>
         <!-- Dashboard -->
-        <li class="menu-item active">
-            <a href="index.html" class="menu-link">
+        <li class="menu-item <?= ($uri->getSegment(1) == 'dasbor') ? 'active' : '' ?>">
+            <a href="<?= base_url('/dasbor') ?>" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
@@ -26,24 +31,24 @@
 
 
         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Halaman</span>
+            <span class="menu-header-text">Menu</span>
         </li>
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link">
+        <li class="menu-item <?= ($uri->getSegment(1) == 'halaman') ? 'active' : '' ?>">
+            <a href="<?= base_url('/halaman') ?>" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account Settings">Kelola Halaman</div>
             </a>
         </li>
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link">
+        <li class="menu-item <?= ($uri->getSegment(1) == 'adminberita') ? 'active' : '' ?>">
+            <a href="<?= base_url('/adminberita') ?>" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Authentications">Kelola Berita</div>
             </a>
         </li>
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link">
+        <li class="menu-item <?= ($uri->getSegment(1) == 'pengaturan') ? 'active' : '' ?>">
+            <a href="<?= base_url('/pengaturan') ?>" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-cog"></i>
-                <div data-i18n="Misc">Pegaturan</div>
+                <div data-i18n="Misc">Pengaturan</div>
             </a>
         </li>
     </ul>

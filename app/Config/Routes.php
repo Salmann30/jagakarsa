@@ -23,3 +23,7 @@ $routes->get('/chatbot', 'Home::chatbot');
 // INI ROUTES ADMIN
 
 $routes->get('/login', 'Admin::login');
+$routes->get('/dasbor', 'Admin::index');
+$routes->get('/halaman', 'Admin::halaman');
+$routes->get('/adminberita', 'Admin::berita');
+$routes->get('/pengaturan', 'Admin::pengaturan');
