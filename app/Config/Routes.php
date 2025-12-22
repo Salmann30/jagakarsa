@@ -22,8 +22,16 @@ $routes->get('/chatbot', 'Home::chatbot');
 
 // INI ROUTES ADMIN
 
-$routes->get('/login', 'Admin::login');
-$routes->get('/dasbor', 'Admin::index');
-$routes->get('/halaman', 'Admin::halaman');
-$routes->get('/adminberita', 'Admin::berita');
-$routes->get('/pengaturan', 'Admin::pengaturan');
+$routes->get('/dasbor', 'Admin::index', ['filter' => 'authGuard']);
+$routes->get('/halaman', 'Admin::halaman', ['filter' => 'authGuard']);
+$routes->get('/adminberita', 'Admin::berita', ['filter' => 'authGuard']);
+$routes->get('/pengaturan', 'Admin::pengaturan', ['filter' => 'authGuard']);
+
+
+// INI ROUTES AUTH
+
+$routes->get('/login', 'Auth::index');
+$routes->get('/register', 'Auth::register');
+$routes->post('/auth/save', 'Auth::save');
+$routes->post('/auth/login', 'Auth::login');
+$routes->get('/logout', 'Auth::logout');

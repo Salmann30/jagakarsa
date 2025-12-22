@@ -9,7 +9,8 @@
 
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <div class="navbar-nav align-items-center">
-            <h5 class="py-3 my-1 text-dark">Admin Dashboard</h5>
+            <span class="fw-semibold d-block me-2">Selamat datang, <?= session()->get('username') ?></span>
+            <small class="text-muted fw-bold">Admin</small>
         </div>
         <!-- Search -->
         <div class="navbar-nav align-items-center">
@@ -37,8 +38,8 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <span class="fw-medium d-block">salmanskuy</span>
-                                    <small class="text-muted">Kuliner</small>
+                                    <span class="fw-medium d-block"><?= session()->get('username') ?></span>
+                                    <small class="text-muted">Admin</small>
                                 </div>
                             </div>
                         </a>
@@ -57,7 +58,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                        <a class="dropdown-item" href="<?= base_url('/logout') ?>">
                             <i class="bx bx-power-off me-2"></i>
                             <span class="align-middle">Log Out</span>
                         </a>
