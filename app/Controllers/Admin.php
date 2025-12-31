@@ -36,10 +36,12 @@ class Admin extends BaseController
     }
     public function update($id)
     {
+        $user = $this->userModel->find($id);
+
         $data = [
             'nama'     => $this->request->getPost('nama'),
             'username' => $this->request->getPost('username'),
-            'email'    => $this->request->getPost('email'),
+            'email'    => $user['email'],
             'notelp'    => $this->request->getPost('notelp')
         ];
 
